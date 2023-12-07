@@ -1,0 +1,16 @@
+nav {
+  padding: 5px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

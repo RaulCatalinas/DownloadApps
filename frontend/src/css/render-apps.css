@@ -1,0 +1,139 @@
+.app-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 16px;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.app-card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+  padding: 16px;
+  gap: 5px;
+  width: max-content;
+  height: auto;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+p {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.icon-download-app {
+  width: 50px;
+  height: auto;
+  margin-right: 8px;
+}
+
+.download-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+body.dark-mode .app-card {
+  border: 1px solid #fff;
+}
+
+body .app-card {
+  border: 1px solid #000;
+}
+
+body.dark-mode .icon-download-app {
+  filter: invert(1);
+}
+
+body .icon-download-app {
+  filter: invert(0);
+}
+
+.os-list {
+  display: flex;
+  gap: 4px;
+  padding-top: 8px;
+}
+
+.os-list p {
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+body.dark-mode .os-list > p {
+  background-color: white;
+  color: black;
+}
+
+body .os-list > p {
+  background-color: black;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .app-list {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    overflow-y: scroll;
+  }
+
+  .app-card {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+  }
+
+  .icon-download-app {
+    width: 24px;
+    height: auto;
+    margin-right: 4px;
+  }
+
+  .download-button {
+    padding: 4px 8px;
+  }
+
+  h1 {
+    font-size: 4vw;
+    margin-bottom: 2vw;
+  }
+
+  p {
+    font-size: 3vw;
+    margin-bottom: 3vw;
+  }
+
+  .app-card h1,
+  .app-card p {
+    overflow-wrap: break-word;
+  }
+
+  .os-list {
+    flex-wrap: wrap;
+  }
+
+  .os-list p {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+}

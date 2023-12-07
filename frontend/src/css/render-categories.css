@@ -1,0 +1,30 @@
+.select-container {
+  position: relative;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.custom-select {
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+body.dark-mode .custom-select {
+  border: 1px solid #fff;
+}
+
+body .custom-select {
+  border: 1px solid #000;
+}
+
+@media (max-width: 768px) {
+  .select-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
