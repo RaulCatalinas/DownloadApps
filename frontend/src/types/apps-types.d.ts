@@ -1,52 +1,52 @@
 export interface Apps {
-  id: number;
-  attributes: PurpleAttributes;
+  id: number
+  attributes: PurpleAttributes
 }
 
 export interface PurpleAttributes {
-  name: string;
-  description: string;
-  locale: string;
-  logo: Logo;
-  executable: Executable;
-  categories: Categories;
+  name: string
+  description: string
+  locale: string
+  logo: Logo
+  executable: Executable
+  categories: Categories
 }
 
 export interface Categories {
-  data: CategoriesDatum[];
+  data: CategoriesDatum[]
 }
 
 export interface CategoriesDatum {
-  id: number;
-  attributes: FluffyAttributes;
+  id: number
+  attributes: FluffyAttributes
 }
 
 export interface FluffyAttributes {
-  name: string;
+  name: string
 }
 
 export interface Executable {
-  data: ExecutableDatum[];
+  data: ExecutableDatum[]
 }
 
 export interface ExecutableDatum {
-  id: number;
-  attributes: TentacledAttributes;
+  id: number
+  attributes: TentacledAttributes
 }
 export interface TentacledAttributes {
-  url: string;
+  url: string
 }
 
 export interface Logo {
-  data: Data;
+  data: Data
 }
 
 export interface Data {
-  id: number;
-  attributes: DataAttributes;
+  id: number
+  attributes: DataAttributes
 }
 
 export interface DataAttributes {
-  url: string;
-  alternativeText: string;
+  url: string
+  alternativeText: string
 }

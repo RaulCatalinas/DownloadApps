@@ -1,3 +1,4 @@
+/* Select */
 .select-container {
   position: relative;
   margin-bottom: 16px;
@@ -13,15 +14,16 @@
   cursor: pointer;
 }
 
-body.dark-mode .custom-select {
-  border: 1px solid #fff;
-}
-
 body .custom-select {
   border: 1px solid #000;
 }
 
-@media (max-width: 768px) {
+body.dark-mode .custom-select {
+  border: 1px solid #fff;
+}
+
+/* Media queries */
+@media (width <= 768px) {
   .select-container {
     display: flex;
     align-items: center;

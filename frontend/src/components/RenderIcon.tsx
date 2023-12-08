@@ -1,4 +1,4 @@
-import "@css/render-icon.css"
+import '@css/render-icon.css'
 
 interface Icon {
   src: string
@@ -12,8 +12,8 @@ export default function RenderIcon({ src, alt, width, margin }: Icon) {
     <img
       src={src}
       alt={alt}
-      className="icon"
-      style={{ width: `${width}px`, height: "auto", margin: `${margin}px` }}
+      className='icon'
+      style={{ width: `${width}px`, height: 'auto', margin: `${margin}px` }}
     />
   )
 }

@@ -1,3 +1,4 @@
+/* Search */
 .search-container {
   margin-bottom: 16px;
   display:  flex;
@@ -12,15 +13,16 @@
   width: 100vw;
 }
 
-body.dark-mode .search-input {
-  border: 1px solid #fff;
-}
-
 body .search-input {
   border: 1px solid #000;
 }
 
-@media (max-width: 768px) {
+body.dark-mode .search-input {
+  border: 1px solid #fff;
+}
+
+/* Media queries */
+@media (width <= 768px) {
   .search-container{
     display: flex;
     align-items: center;

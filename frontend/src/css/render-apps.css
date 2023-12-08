@@ -1,3 +1,4 @@
+/* Apps */
 .app-list {
   display: flex;
   flex-wrap: wrap;
@@ -29,6 +30,15 @@ p {
   margin-bottom: 12px;
 }
 
+body .app-card {
+  border: 1px solid #000;
+}
+
+body.dark-mode .app-card {
+  border: 1px solid #fff;
+}
+
+/* Download */
 .icon-download-app {
   width: 50px;
   height: auto;
@@ -51,22 +61,15 @@ p {
   }
 }
 
-body.dark-mode .app-card {
-  border: 1px solid #fff;
-}
-
-body .app-card {
-  border: 1px solid #000;
+body .icon-download-app {
+  filter: invert(0);
 }
 
 body.dark-mode .icon-download-app {
   filter: invert(1);
 }
 
-body .icon-download-app {
-  filter: invert(0);
-}
-
+/* OS list */
 .os-list {
   display: flex;
   gap: 4px;
@@ -79,17 +82,19 @@ body .icon-download-app {
   font-size: 14px;
 }
 
-body.dark-mode .os-list > p {
-  background-color: white;
-  color: black;
-}
-
 body .os-list > p {
   background-color: black;
   color: white;
 }
 
-@media (max-width: 768px) {
+
+body.dark-mode .os-list > p {
+  background-color: white;
+  color: black;
+}
+
+/* Media queries */
+@media (width <= 768px) {
   .app-list {
     flex-wrap: wrap;
     justify-content: flex-start;

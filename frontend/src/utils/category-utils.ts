@@ -1,9 +1,9 @@
 // Constants
-import { VALID_CATEGORIES } from "@constants/categories";
+import { VALID_CATEGORIES } from '@constants/categories'
 
 // Types
-import type { Category } from "@types";
+import type { Category } from '@types'
 
 export function isCategory(value: string): value is Category {
-  return VALID_CATEGORIES.includes(value);
+  return VALID_CATEGORIES.includes(value)
 }

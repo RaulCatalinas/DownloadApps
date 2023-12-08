@@ -16,10 +16,7 @@ export default function App() {
     <main>
       <NavBar />
       <SearchApps apps={apps} />
-      <RenderApps 
-        apps={apps} 
-        categories={categories} 
-      />
+      <RenderApps apps={apps} categories={categories} />
     </main>
   )
 }

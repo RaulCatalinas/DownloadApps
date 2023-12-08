@@ -1,7 +1,7 @@
-body.dark-mode .icon {
-  filter: invert(1);
-}
-
 body .icon {
   filter: invert(0);
+}
+
+body.dark-mode .icon {
+  filter: invert(1);
 }

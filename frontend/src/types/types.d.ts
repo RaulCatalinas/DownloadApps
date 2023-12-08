@@ -1,1 +1,1 @@
-export type Category = "Windows" | "macOS" | "Linux" | "All";
+export type Category = 'Windows' | 'macOS' | 'Linux' | 'All'

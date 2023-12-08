@@ -1,7 +1,4 @@
-body {
-  color-scheme: light dark;
-}
-
+/* Buttons */
 button {
   background-color: transparent;
   border: none;
@@ -12,34 +9,17 @@ button:hover {
   cursor: pointer;
 }
 
+/* Theme toggle */
 .theme-toggle {
   display: flex;
   align-items: center;
 }
 
-.moon-icon {
-  width: 30px;
-  height: auto;
-}
-
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
-
-.switch input {
-  display: none;
-}
-
+/* Theme slider */
 .slider {
   position: absolute;
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background-color: #ccc;
   border-radius: 34px;
   transition: background-color 0.4s;
@@ -57,6 +37,18 @@ button:hover {
   transition: transform 0.4s;
 }
 
+/* Switch change theme */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  display: none;
+}
+
 .switch input:checked + .slider {
   background-color: #2196f3;
 }
@@ -65,14 +57,15 @@ button:hover {
   transform: translateX(26px);
 }
 
+/* Dark and Light themes */
 body.dark-mode {
   color-scheme: dark;
-  background-color: #111111;
+  background-color: #111;
   color: #fff;
 }
 
 body {
   color-scheme: light;
   background-color: #fff;
-  color: #000000;
+  color: #000;
 }

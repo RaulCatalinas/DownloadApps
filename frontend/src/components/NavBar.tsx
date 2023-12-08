@@ -1,9 +1,9 @@
 // CSS
-import "@css/nav-bar.css"
+import '@css/nav-bar.css'
 
 // Components
-import ShareButton from "./ShareButton"
-import ThemeMode from "./ThemeMode"
+import ShareButton from './ShareButton'
+import ThemeMode from './ThemeMode'
 
 export default function NavBar() {
   return (

@@ -1,14 +1,14 @@
 // Icons
-import DownloadIcon from "@assets/DownloadIcon.svg";
+import DownloadIcon from '@assets/DownloadIcon.svg'
 
 // Utils
-import { downloadApps } from "@utils/download-apps";
+import { downloadApps } from '@utils/download-apps'
 
 // Components
-import RenderIcon from "./RenderIcon";
+import RenderIcon from './RenderIcon'
 
 // CSS
-import "@css/download-button.css";
+import '@css/download-button.css'
 
 interface DownloadButtonProps {
   downloadURL: string
@@ -21,13 +21,13 @@ export default function DownloadButton({ downloadURL }: DownloadButtonProps) {
 
   return (
     <button
-      className="download-button"
-      id="download-button"
+      className='download-button'
+      id='download-button'
       onClick={handleClick}
     >
       <RenderIcon
         src={DownloadIcon}
-        alt="Icon in svg format to download the executable of the app"
+        alt='Icon in svg format to download the executable of the app'
         width={50}
         margin={8}
       />
