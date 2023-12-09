@@ -3,7 +3,6 @@ import './App.css'
 
 //Components
 import NavBar from './components/NavBar'
-import RenderApps from './components/RenderApps'
 import SearchApps from './components/SearchApps'
 
 // Hooks
@@ -15,8 +14,7 @@ export default function App() {
   return (
     <main>
       <NavBar />
-      <SearchApps apps={apps} />
-      <RenderApps apps={apps} categories={categories} />
+      <SearchApps apps={apps} categories={categories} />
     </main>
   )
 }

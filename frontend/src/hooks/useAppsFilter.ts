@@ -1,5 +1,5 @@
 // React
-import { useMemo, useState } from 'react'
+import { useState } from 'react'
 
 // Types
 import type { Apps } from '@apps-types'
@@ -12,7 +12,7 @@ interface UseAppFilterProps {
 export function useAppFilter({ apps }: UseAppFilterProps) {
   const [selectedCategory, setSelectedCategory] = useState<Category>('All')
 
-  const filteredApps = useMemo(() => {
+  const filterApps = () => {
     if (selectedCategory === 'All') return apps
     else {
       return [...apps].filter(({ attributes }) => {
@@ -23,11 +23,11 @@ export function useAppFilter({ apps }: UseAppFilterProps) {
         )
       })
     }
-  }, [selectedCategory, apps])
+  }
 
   const setCategory = (category: Category) => {
     setSelectedCategory(category)
   }
 
-  return { filteredApps, setCategory }
+  return { filterApps, setCategory }
 }

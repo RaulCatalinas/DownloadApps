@@ -22,7 +22,8 @@ interface RenderAppsProps {
 }
 
 export default function RenderApps({ apps, categories }: RenderAppsProps) {
-  const { filteredApps, setCategory } = useAppFilter({ apps })
+  const { filterApps, setCategory } = useAppFilter({ apps })
+  const filteredApps = filterApps()
 
   return (
     <div>
@@ -30,7 +31,10 @@ export default function RenderApps({ apps, categories }: RenderAppsProps) {
 
       <ul className='app-list'>
         {filteredApps.length === 0 ? (
-          <h1>No apps available for this operating system</h1>
+          <h1>
+            No apps found. Please try a different search or select another
+            operating system.
+          </h1>
         ) : (
           filteredApps.map(({ attributes, id }) => {
             const { name, description, logo, categories } = attributes
