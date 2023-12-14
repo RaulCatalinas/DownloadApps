@@ -20,3 +20,5 @@ export interface AppsDatum {
 export interface FluffyAttributes {
   name: string
 }
+
+export type Category = 'Windows' | 'macOS' | 'Linux' | 'All'

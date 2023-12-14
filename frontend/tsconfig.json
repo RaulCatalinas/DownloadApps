@@ -24,10 +24,9 @@
       "@constants/*": ["src/constants/*"],
       "@css/*": ["src/css/*"],
       "@hooks/*": ["src/hooks/*"],
+      "@utils/*": ["src/utils/*"],
       "@apps-types": ["src/types/apps-types.d.ts"],
-      "@categories-types": ["src/types/categories-types.d.ts"],
-      "@types": ["src/types/types.d.ts"],
-      "@utils/*": ["src/utils/*"]
+      "@categories-types": ["src/types/categories-types.d.ts"]
     }
   },
   "include": ["src"],
