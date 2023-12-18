@@ -40,11 +40,7 @@ export default function SearchApps({ apps, categories }: SearchAppsProps) {
         />
       </search>
 
-      <RenderApps
-        apps={searchApps()}
-        categories={categories}
-        alternativeText='No apps found matching your search criteria'
-      />
+      <RenderApps apps={searchApps()} categories={categories} />
     </div>
   )
 }
