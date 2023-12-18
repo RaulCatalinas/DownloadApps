@@ -1,31 +1,39 @@
-import type { Category } from '@types'
+// Types
+import type { Category } from '@categories-types'
+
+// Third-Party libraries
+import { Octokit } from '@octokit/rest'
 
 interface GetDownloadURLProps {
-  repoName: string
+  repo: string
   executableName: string
   os: Category
 }
 
 export async function getDownloadURL({
-  repoName,
+  repo,
   executableName,
   os
 }: GetDownloadURLProps) {
-  const githubApiURL = `https://api.github.com/RaulCatalinas/${repoName}/releases/latest`
+  const octokit = new Octokit()
 
   try {
-    const res = await fetch(githubApiURL)
-    const { assets } = await res.json()
+    const { data: repoData } = await octokit.repos.getLatestRelease({
+      owner: 'RaulCatalinas',
+      repo
+    })
 
-    const asset = assets.find(
-      asset => asset.name.includes(executableName) && asset.name.includes(os)
+    const { assets } = repoData
+
+    const indexOfMatchingAsset = assets.findIndex(
+      asset => asset.name === `${executableName}-${os}.zip`
     )
 
-    if (asset) return asset.browser_download_url
-    else
-      throw new Error(
-        "The executable for the specified operating system wasn't found."
-      )
+    if (indexOfMatchingAsset === -1) return ''
+
+    const downloadURL = assets[indexOfMatchingAsset].browser_download_url
+
+    return downloadURL
   } catch (error) {
     console.error(error)
 

@@ -3,7 +3,7 @@ import { useState } from 'react'
 
 // Types
 import type { Apps } from '@apps-types'
-import type { Category } from '@types'
+import type { Category } from '@categories-types'
 
 interface UseAppFilterProps {
   apps: Apps[]
@@ -29,5 +29,5 @@ export function useAppFilter({ apps }: UseAppFilterProps) {
     setSelectedCategory(category)
   }
 
-  return { filterApps, setCategory }
+  return { filterApps, setCategory, selectedCategory }
 }

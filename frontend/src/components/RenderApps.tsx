@@ -1,20 +1,13 @@
-// Css
-import '@css/render-apps.css'
-
 // Components
-import DownloadButton from './DownloadButton'
 import RenderCategories from './RenderCategories'
-import RenderImage from './RenderImage'
-
-// Constants
-import { HOST } from '@constants/host'
 
 // Types
 import type { Apps } from '@apps-types'
+import type { Categories } from '@categories-types'
 
 // Hooks
-import { Categories } from '@categories-types'
 import { useAppFilter } from '@hooks/useAppsFilter'
+import AppsCard from './AppsCard'
 
 interface RenderAppsProps {
   apps: Apps[]
@@ -22,7 +15,7 @@ interface RenderAppsProps {
 }
 
 export default function RenderApps({ apps, categories }: RenderAppsProps) {
-  const { filterApps, setCategory } = useAppFilter({ apps })
+  const { filterApps, setCategory, selectedCategory } = useAppFilter({ apps })
   const filteredApps = filterApps()
 
   return (
@@ -43,22 +36,16 @@ export default function RenderApps({ apps, categories }: RenderAppsProps) {
 
             return (
               <li key={id}>
-                <div className='app-card'>
-                  <h1>{name}</h1>
-                  <p>{description}</p>
-                  <span className='os-list'>
-                    {categoryData.map(({ attributes, id }) => (
-                      <p key={id}>{attributes.name}</p>
-                    ))}
-                  </span>
-                  <RenderImage
-                    src={`${HOST}${logoURL}`}
-                    alt={alternativeText}
-                    width={110}
-                    margin={12}
-                  />
-                  <DownloadButton downloadURL='Cambiar por la URL de descarga desde GitHub' />
-                </div>
+                <AppsCard
+                  name={name}
+                  description={description}
+                  categoryData={categoryData}
+                  logoURL={logoURL}
+                  alternativeText={alternativeText}
+                  selectedCategory={selectedCategory}
+                  repo={name}
+                  executableName={name}
+                />
               </li>
             )
           })

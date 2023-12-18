@@ -1,6 +1,5 @@
 // Types
-import type { Categories } from '@categories-types'
-import type { Category } from '@types'
+import type { Categories, Category } from '@categories-types'
 
 // CSS
 import '@css/render-categories.css'
