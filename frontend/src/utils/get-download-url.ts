@@ -29,7 +29,7 @@ export async function getDownloadURL({
       asset => asset.name === `${executableName}-${os}.zip`
     )
 
-    if (indexOfMatchingAsset === -1) return ''
+    if (indexOfMatchingAsset === -1) throw new Error('Asset not found')
 
     const downloadURL = assets[indexOfMatchingAsset].browser_download_url
 

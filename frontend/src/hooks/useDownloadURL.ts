@@ -33,6 +33,8 @@ export function useDownloadURL({
         setDownloadURL(url)
       } catch (err) {
         console.error(err)
+
+        setDownloadURL('')
       }
     }
 
