@@ -1,11 +1,14 @@
+//React
 import { useEffect, useState } from 'react'
-import { useLocalStorage } from './useLocalStorage'
+
+// Utils
+import { LocalStorageManager } from '@utils/local-storage-manager'
 
 export function useDarkMode() {
   const [darkMode, setDarkMode] = useState(false)
-  const { getItem, setItem } = useLocalStorage()
+  const localStorageManager = new LocalStorageManager()
 
-  const storedTheme = getItem('theme')
+  const storedTheme = localStorageManager.getItem('theme')
 
   useEffect(() => {
     if (storedTheme) setDarkMode(storedTheme === 'dark')
@@ -23,7 +26,7 @@ export function useDarkMode() {
 
     const themeToSave = darkModeIsActivated ? 'dark' : 'light'
 
-    setItem({ key: 'theme', value: themeToSave })
+    localStorageManager.setItem({ key: 'theme', value: themeToSave })
   }
 
   const setDarkTheme = () => {
@@ -31,7 +34,7 @@ export function useDarkMode() {
 
     document.body.classList.add('dark-mode')
 
-    setItem({ key: 'theme', value: 'dark' })
+    localStorageManager.setItem({ key: 'theme', value: 'dark' })
   }
 
   const setLightTheme = () => {
@@ -39,7 +42,7 @@ export function useDarkMode() {
 
     document.body.classList.remove('dark-mode')
 
-    setItem({ key: 'theme', value: 'light' })
+    localStorageManager.setItem({ key: 'theme', value: 'light' })
   }
 
   return { darkMode, toggleTheme, setDarkTheme, setLightTheme }

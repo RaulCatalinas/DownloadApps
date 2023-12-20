@@ -3,6 +3,7 @@ import type { Category } from '@categories-types'
 
 // Third-Party libraries
 import { Octokit } from '@octokit/rest'
+import { LocalStorageManager } from './local-storage-manager'
 
 interface GetDownloadURLProps {
   repo: string
@@ -15,9 +16,16 @@ export async function getDownloadURL({
   executableName,
   os
 }: GetDownloadURLProps) {
-  const octokit = new Octokit()
+  const localStorageManager = new LocalStorageManager()
 
   try {
+    const downloadURLFromLocalStorage =
+      localStorageManager.getItem('download-url')
+
+    if (downloadURLFromLocalStorage) return downloadURLFromLocalStorage
+
+    const octokit = new Octokit()
+
     const { data: repoData } = await octokit.repos.getLatestRelease({
       owner: 'RaulCatalinas',
       repo
@@ -31,9 +39,16 @@ export async function getDownloadURL({
 
     if (indexOfMatchingAsset === -1) throw new Error('Asset not found')
 
-    const downloadURL = assets[indexOfMatchingAsset].browser_download_url
+    const downloadURLFromGitHub =
+      assets[indexOfMatchingAsset].browser_download_url
 
-    return downloadURL
+    localStorageManager.setItem({
+      key: 'download-url',
+      value: downloadURLFromGitHub,
+      expiresIn30Days: true
+    })
+
+    return downloadURLFromGitHub
   } catch (error) {
     console.error(error)
 
