@@ -1,4 +1,5 @@
 // Components
+import AppCard from './AppCard'
 import RenderCategories from './RenderCategories'
 
 // Types
@@ -7,7 +8,6 @@ import type { Categories } from '@categories-types'
 
 // Hooks
 import { useAppFilter } from '@hooks/useAppsFilter'
-import AppsCard from './AppsCard'
 
 interface RenderAppsProps {
   apps: Apps[]
@@ -36,7 +36,7 @@ export default function RenderApps({ apps, categories }: RenderAppsProps) {
 
             return (
               <li key={id}>
-                <AppsCard
+                <AppCard
                   name={name}
                   description={description}
                   categoryData={categoryData}

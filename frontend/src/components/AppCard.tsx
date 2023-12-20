@@ -15,7 +15,7 @@ import RenderImage from './RenderImage'
 // Hooks
 import { useDownloadURL } from '@hooks/useDownloadURL'
 
-interface AppsCardProps {
+interface AppCardProps {
   name: string
   description: string
   categoryData: CategoriesDatum[]
@@ -26,7 +26,7 @@ interface AppsCardProps {
   executableName: string
 }
 
-export default function AppsCard({
+export default function AppCard({
   name,
   description,
   categoryData,
@@ -35,7 +35,7 @@ export default function AppsCard({
   selectedCategory,
   repo,
   executableName
-}: AppsCardProps) {
+}: AppCardProps) {
   const { downloadURL } = useDownloadURL({
     repo,
     executableName,
